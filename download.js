@@ -4,10 +4,9 @@ async function download(nuxt, allLayers) { // function to download (in ORA forma
 	const localSettings = JSON.parse(localStorage["picrew.local.data."+state.imageMakerId]); // user's local settings for this image maker
 	const baseURL = state.config.baseUrl;
 	
-	let imageCount = 0
-	for (const item of Object.values(state.commonImages)) for (const layer of Object.values(item)) for (const colour of Object.values(layer)) imageCount++; // count total number of images needed to fetch
-	console.log(imageCount+" unprocessed images");
-	let fetchedImages = imageCount;
+	let imageCount = 0;
+	if (allLayers) for (const item of Object.values(state.commonImages)) for (const layer of Object.values(item)) for (const colour of Object.values(layer)) imageCount++; // count total number of images needed to fetch
+	else for (const item in localSettings) imageCount++; // this is total number if downloading only selected
 	
 	let ora = new JSZip(); // OpenRaster Format.
 	ora.file("mimetype","image/openraster", {compression: "STORE"}); // create required mimetype file
@@ -36,7 +35,7 @@ async function download(nuxt, allLayers) { // function to download (in ORA forma
 					let colourStack = stack.createElement("stack");
 					const partSettings = localSettings[part.pId]; // user's settings for this part
 					const itemActive = partSettings.itmId==item.itmId&&partSettings.cId==colour.cId
-					if ((allLayers?true:itemActive)&&state.commonImages[item.itmId]&&state.commonImages[item.itmId][layer]&&state.commonImages[item.itmId][layer][colour.cId]) { // check image is in dataset
+					if ((allLayers||itemActive)&&state.commonImages[item.itmId]&&state.commonImages[item.itmId][layer]&&state.commonImages[item.itmId][layer][colour.cId]) { // check image is in dataset
 						const url = new URL(state.commonImages[item.itmId][layer][colour.cId].url, baseURL); // url of image to fetch
 						const fileName = url.pathname.split("/").reverse()[0]; // name of file (unique presumably)
 						await fetch(url,{keepalive:true}).then(response=>response.arrayBuffer()).then(buffer=>ora.folder("data").file(fileName, buffer)) // fetch resource at given URL (synchronously)
@@ -69,7 +68,7 @@ async function download(nuxt, allLayers) { // function to download (in ORA forma
 	image.appendChild(rootStack)
 	layers.reverse(); // ora layers stack oppositely
 	for (let layer=0;layer<layers.length;layer++) { // iterate through now complete `layers` (has to be in order)
-		if (layers[layer]!=undefined) rootStack.appendChild(layers[layer]); // reverse layers
+		if (layers[layer]!=undefined) rootStack.appendChild(layers[layer]);
 	}
 	ora.file("stack.xml",new XMLSerializer().serializeToString(stack), {compression:"DEFLATE"}); // adds completed stack to ora
 	const renderedImage = document.getElementById("my-canvas-object"); // already rendered image (good for thumbnails & such)
@@ -110,3 +109,5 @@ downloadAllButton.className = "imagemaker_complete_btn";
 downloadAllButton.type = "button";
 downloadAllButton.addEventListener("click", ()=>{window.postMessage(true,"*")});
 document.body.appendChild(downloadAllButton);
+
+
