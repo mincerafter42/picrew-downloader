@@ -2,8 +2,8 @@ Manifest-Version: 1.0
 
 Name: README.md
 Digest-Algorithms: SHA1 SHA256
-SHA1-Digest: 7bolE77nJ9gdW9YbUKmthYAIJNM=
-SHA256-Digest: 3tEHpQfu09ioLFQH/MBCgvXsotAAoSCfDR+035Hb1rs=
+SHA1-Digest: aM/21vlrKh47eWj1B0QfdLGIzLo=
+SHA256-Digest: JUx8Fd0nGfxwpcP6sNZiEILw5NadXVwpVYXdmbDyX1U=
 
 Name: background.js
 Digest-Algorithms: SHA1 SHA256
@@ -17,8 +17,8 @@ SHA256-Digest: 20nCf5+gnjtvKhlGMyUa9LhAdrqvQcIcgJKqfdWiAws=
 
 Name: download.js
 Digest-Algorithms: SHA1 SHA256
-SHA1-Digest: 7nbvDKv+ZjUrfDtz1v/8JR1JISc=
-SHA256-Digest: FDQL5cC1zgFCzdHMYX98y2eEKOtXAZMr0FumjI58FuI=
+SHA1-Digest: kGRBCCIsto9kQYtJAROc2uLOOac=
+SHA256-Digest: jLGqiM2PEmbpW7xm8lAlgzLJiGea8SKfklyyxGn33Wg=
 
 Name: jszip.min.js
 Digest-Algorithms: SHA1 SHA256
@@ -27,16 +27,16 @@ SHA256-Digest: hdXEPyHoMEfbAEK3/BWxzauCJbq3IqjHDbOsoBl9R6k=
 
 Name: manifest.json
 Digest-Algorithms: SHA1 SHA256
-SHA1-Digest: MB4xk3Mi2GD2LE8RvuuBOdPHdBA=
-SHA256-Digest: w9RCrDPp0RJ2D4QxZEDNURC7R3PfZfgN+aWIYiuniHw=
+SHA1-Digest: j7PCLpFydbRVnLZl+eNY+pMB9Sc=
+SHA256-Digest: KocUkzuLN7FsLZ3ipGUWma/EYZwOnZ1b9RyNq1ATWXA=
 
 Name: META-INF/cose.manifest
 Digest-Algorithms: SHA1 SHA256
-SHA1-Digest: xVRbBnGMXN7OpRWW7vZ8NQxiZek=
-SHA256-Digest: 8ID0s6iiVM4W7P6deI2/txDmLELPvRZymbUHZKqQV40=
+SHA1-Digest: 4qNf6zkX5Sw9M5xyvc3svAY/Btw=
+SHA256-Digest: c41oGqhLjF1vohwa5AONt87GzXguAZ0wq4VUoiLegBc=
 
 Name: META-INF/cose.sig
 Digest-Algorithms: SHA1 SHA256
-SHA1-Digest: bWf9bAvVoGwieKGqeBeZ6cfj/gQ=
-SHA256-Digest: ekaue1I4ugCQ42C7OhvUChC7Zp82Fmd6xBaD+QG/Alc=
+SHA1-Digest: J9bSslvkds8WF3b9tLmlO2uWu60=
+SHA256-Digest: i5Z4pUOzVhcxTrDxzHU6SeaSlN6HhrhxYmWlj2Z/eRQ=
 
