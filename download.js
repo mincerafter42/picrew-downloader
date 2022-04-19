@@ -2,7 +2,7 @@ async function download(nuxt, allLayers) { // function to download (in ORA forma
 	console.log(nuxt);
 	const state = nuxt.state; // buncha data is stored here.
 	const localSettings = JSON.parse(localStorage["picrew.local.data."+state.imageMakerId]); // user's local settings for this image maker
-	const baseURL = state.config.baseUrl;
+	const baseURL = state.config.baseUrl||"https://picrew.me";
 	
 	let imageCount = 0;
 	if (allLayers) for (const item of Object.values(state.commonImages)) for (const layer of Object.values(item)) for (const colour of Object.values(layer)) imageCount++; // count total number of images needed to fetch
@@ -85,8 +85,8 @@ async function download(nuxt, allLayers) { // function to download (in ORA forma
 	ora.generateAsync({type:"blob", mimeType:"image/openraster"}, metadata=>{console.log(metadata.percent+"% generated")} )
 	.then(oraBlob=>{
 		const blobUrl = URL.createObjectURL(oraBlob); // create a URL for the blob
-		if (typeof browser !== "undefined") { // firefox has the wackiest blob shenanigans going on
-			oraLink = document.createElement("a"); // i didn't want to have to resort to this, but any other method i tried on firefox failed
+//		if (typeof browser !== "undefined") { // firefox has the wackiest blob shenanigans going on
+			let oraLink = document.createElement("a"); // i didn't want to have to resort to this, but any other method i tried on firefox failed
 			oraLink.href = blobUrl;
 			oraLink.download = state.imageMakerId +".ora";
 			oraLink.target = "_blank";
@@ -95,8 +95,8 @@ async function download(nuxt, allLayers) { // function to download (in ORA forma
 			oraLink.click();
 			document.body.removeChild(oraLink)
 			URL.revokeObjectURL(blobUrl);
-		}
-		else chrome.runtime.sendMessage({url: blobUrl, filename: state.imageMakerId +".ora"}); // send download message
+//		}
+//		else chrome.runtime.sendMessage({url: blobUrl, filename: state.imageMakerId +".ora"}); // send download message
 	})
 }
 

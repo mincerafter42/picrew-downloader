@@ -13,4 +13,4 @@ Uses [JSZip](https://github.com/Stuk/jszip) under its MIT license.
 Go to <chrome://extensions>. Enable Developer Mode. Click Load Unpacked and select an uncompressed folder containing these files. You can disable Developer Mode now if you want.
 
 ## Installation instructions for Firefox
-Go to <about:addons>. Click the gear and select Install add-on from file. Select a .zip file containing these files.
+Go to <about:addons>. Click the gear and select Install add-on from file. Select an .xpi file containing these files.
