@@ -37,7 +37,7 @@ async function download(nuxt, allLayers) { // function to download (in ORA forma
 					const itemActive = partSettings.itmId==item.itmId&&partSettings.cId==colour.cId
 					if ((allLayers||itemActive)&&state.commonImages[item.itmId]&&state.commonImages[item.itmId][layer]&&state.commonImages[item.itmId][layer][colour.cId]) { // check image is in dataset
 						const url = new URL(state.commonImages[item.itmId][layer][colour.cId].url, baseURL); // url of image to fetch
-						const fileName = allLayers ? layer+'_'+part.pNm+'/'+item.itmId+'/'+colour.cd+'.png' : url.pathname.split("/").reverse()[0]; // name of file
+						const fileName = allLayers ? layer+'_'+part.pNm.replace('/','_')+'/'+item.itmId+'/'+colour.cd+'.png' : url.pathname.split("/").reverse()[0]; // name of file
 						await fetch(url,{keepalive:true}).then(response=>response.arrayBuffer()).then(buffer=>ora.folder("data").file(fileName, buffer)) // fetch resource at given URL (synchronously)
 						
 						let layerElem = stack.createElement("layer"); // layer element
