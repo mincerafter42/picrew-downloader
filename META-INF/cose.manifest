@@ -12,8 +12,8 @@ SHA256-Digest: 20nCf5+gnjtvKhlGMyUa9LhAdrqvQcIcgJKqfdWiAws=
 
 Name: download.js
 Digest-Algorithms: SHA1 SHA256
-SHA1-Digest: 3/OXnq+3MweouNtkosqB758YKn4=
-SHA256-Digest: AqBpq1Hc03nj15M1ZcqdE51ZTfPpbuuzsKB6WNqae6E=
+SHA1-Digest: pSz3yrNK6awX7xrllIspd+hMTQI=
+SHA256-Digest: dpXAFCEiJreQSTYLM7k9zZNKkQKNJ0Aw9ycwNFxxhWI=
 
 Name: jszip.min.js
 Digest-Algorithms: SHA1 SHA256
@@ -22,6 +22,6 @@ SHA256-Digest: hdXEPyHoMEfbAEK3/BWxzauCJbq3IqjHDbOsoBl9R6k=
 
 Name: manifest.json
 Digest-Algorithms: SHA1 SHA256
-SHA1-Digest: ulCuWYUKlrSoLz1rjo90vvP+xYM=
-SHA256-Digest: RaB87CllYWlRNy0k9QhBiOUrDAuOBYK/hz0IhCu6hOg=
+SHA1-Digest: oo7X+bTwNTcGdj4ud0uE4OhptcE=
+SHA256-Digest: 8OkItX9uX9Z4C9evNySHWKueQT8zu5hrbkFFfT/GoUk=
 
