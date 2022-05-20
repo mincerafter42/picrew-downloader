@@ -2,7 +2,8 @@ async function download(nuxt, allLayers) { // function to download (in ORA forma
 	console.log(nuxt);
 	const state = nuxt.state; // buncha data is stored here.
 	const localSettings = JSON.parse(localStorage["picrew.local.data."+state.imageMakerId]); // user's local settings for this image maker
-	const baseURL = state.config.baseUrl||"https://picrew.me";
+	//const baseURL = state.config.baseUrl||"https://picrew.me";
+	const baseURL = "https://picrew.me";
 	
 	let imageCount = 0;
 	if (allLayers) for (const item of Object.values(state.commonImages)) for (const layer of Object.values(item)) for (const colour of Object.values(layer)) imageCount++; // count total number of images needed to fetch
