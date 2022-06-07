@@ -1,6 +1,6 @@
 {
 	"manifest_version": 2,
-	"version": "0.6.3",
+	"version": "0.6.4",
 	"name": "Picrew Downloader",
 	"author": "mincerafter42",
 	"description": "Adds two buttons to Picrew image makers: one to download the currently visible layers as an OpenRaster file, and one to download the entire image maker as an OpenRaster file. Downloading an entire image maker results in a very large file. Uses JSZip.",

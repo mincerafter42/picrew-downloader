@@ -72,7 +72,7 @@ async function download(nuxt, allLayers) { // function to download (in ORA forma
 		if (layers[layer]!=undefined) rootStack.appendChild(layers[layer]);
 	}
 	ora.file("stack.xml",new XMLSerializer().serializeToString(stack), {compression:"DEFLATE"}); // adds completed stack to ora
-	const renderedImage = document.getElementById("my-canvas-object"); // already rendered image (good for thumbnails & such)
+	const renderedImage = document.getElementById("my-canvas-object").firstElementChild.firstElementChild; // already rendered image (good for thumbnails & such)
 	ora.file("mergedimage.png",renderedImage.toDataURL().slice(22),{base64:true}); // add required mergedImage.png
 	// going to create a smaller canvas for the required thumbnail
 	const canvasScale = 256/Math.max(state.config.w, state.config.h); // scaling factor of canvas to match required thumbnail size
